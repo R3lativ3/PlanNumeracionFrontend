@@ -1,0 +1,72 @@
+<!--
+<div class="auth-wrapper d-flex no-block justify-content-center align-items-center" 
+    style='background: hsla(212, 85%, 69%, 1);
+    background: linear-gradient(315deg, hsla(212, 85%, 69%, 1) 9%, hsla(195, 100%, 44%, 1) 85%);
+    background: -moz-linear-gradient(315deg, hsla(212, 85%, 69%, 1) 9%, hsla(195, 100%, 44%, 1) 85%);
+    background: -webkit-linear-gradient(315deg, hsla(212, 85%, 69%, 1) 9%, hsla(195, 100%, 44%, 1) 85%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#6DABF3", endColorstr="#00A8E0", GradientType=1 );'
+>
+    <div class="auth-box m-3 m-md-0">
+        <div id="loginform" [ngClass]="{'d-none': recoverform}">
+            <div class="logo">
+                <span class="db"><img src="assets/images/att-logo.png" width="200px" height="80px" alt="logo" /></span>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <form class="form-horizontal m-t-20" id="loginform" [formGroup]="form" (ngSubmit)="login()">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="ti-user"></i></span>
+                            </div>
+                            <input type="text" formControlName="UserName" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon2"><i class="ti-pencil"></i></span>
+                            </div>
+                            <input type="password" formControlName="Password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <div class="custom-control custom-checkbox d-flex">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label font-14" for="customCheck1">Remember me</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group text-center">
+                            <div class="col-xs-12 p-b-20">
+                                <button class="btn btn-block btn-lg btn-info" type="submit" [disabled]="form.invalid">Log In</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+-->
+
+
+
+<div class="modal " id="exampleModal" style="display: block;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content p-4">
+            <div class="modal-header border-0 mb-2">
+                <img src="assets/images/logo-att-white.png" width="100%" height="30%" />
+            </div>
+            <form id="loginform" [formGroup]="form" (ngSubmit)="login()">
+                <div class="modal-body">
+                    <h3 class="mb-4 title">Ingresa tus Credenciales</h3>
+                    <div class="form-group"> <input type="text" formControlName="UserName" id="email" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="name">Username</label> </div>
+                    <div class="form-group"> <input type="password" formControlName="Password" id="password" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="password">Password</label> </div>
+                    <label class="tc">By signing up I accept the <strong>Terms & Conditions</strong> of Daily</label>
+                </div>
+                <div class="modal-footer border-0 mb-4">
+                    <button type="submit" class="btn signup col-6 col-md-6" [disabled]="form.invalid">SIGNUP</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

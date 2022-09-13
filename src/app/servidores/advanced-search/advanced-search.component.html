@@ -1,0 +1,65 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title text-uppercase mb-0">Filtrar Por Rango</h5>
+        <div class="row">
+           
+            <div class="col-md-6">
+                <div class="form-group has-success">
+                    <label class="control-label">Version Sistema Operativo</label>
+                    <app-select-box [modelInput] = setModel(versionesSistemaOperativo) (event)="receiveSelectBox($event, 'idVersionSistemaOperativo')"></app-select-box>
+                </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-6">
+                <div class="form-group has-success">
+                    <label class="control-label">Modelo HW</label>
+                    <app-select-box [modelInput] = setModel(modelosHW) (event)="receiveSelectBox($event, 'idModeloHW')"></app-select-box>
+                </div>
+            </div>
+            <!--/span-->
+        </div>
+        <!--/row-->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group has-success">
+                    <label class="control-label">Ubicacion Fisica</label>
+                    <app-select-box [modelInput] = setModel(ubicaciones) (event)="receiveSelectBox($event, 'idUbicacionFisica')"></app-select-box>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group has-success">
+                    <label class="control-label">Empresa</label>
+                    <app-select-box [modelInput] = setModel(empresas) (event)="receiveSelectBox($event, 'idEmpresa')"></app-select-box>
+                </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-4">
+                <div class="form-group has-success">
+                    <label class="control-label">Ambiente</label>
+                    <app-select-box [modelInput] = setModel(ambientes) (event)="receiveSelectBox($event, 'idAmbiente')"></app-select-box>
+
+                </div>
+            </div>
+            <!--/span-->
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group has-success">
+                    <label class="control-label">Virtualizador</label>
+                    <app-select-box [modelInput] = setModel(virtualizadores) (event)="receiveSelectBox($event, 'idVirtualizador')"></app-select-box>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group has-success">
+                    <label class="control-label">Categoria</label>
+                    <app-select-box [modelInput] = setModel(categorias) (event)="receiveSelectBox($event, 'idCategoria')"></app-select-box>
+                </div>
+            </div>
+
+
+        </div>
+        <a (click)="sendServidorSearch()" class="btn btn-info">Buscar</a>
+    </div>
+</div>

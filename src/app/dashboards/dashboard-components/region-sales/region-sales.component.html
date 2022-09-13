@@ -1,0 +1,61 @@
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <div>
+                <h4 class="card-title m-b-0">Top Region Sales</h4>
+            </div>
+            <div class="ml-auto">
+                <div class="dl">
+                    <select class="custom-select border-0 text-muted">
+                        <option value="0" selected="">August 2018</option>
+                        <option value="1">May 2018</option>
+                        <option value="2">March 2018</option>
+                        <option value="3">June 2018</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3 d-flex flex-column" style="height: 260px;">
+            <apx-chart [series]="ToplocationsChartOptions.series" [chart]="ToplocationsChartOptions.chart"
+                [dataLabels]="ToplocationsChartOptions.dataLabels" [grid]="ToplocationsChartOptions.grid"
+                [plotOptions]="ToplocationsChartOptions.plotOptions" [xaxis]="ToplocationsChartOptions.xaxis"
+                [stroke]="ToplocationsChartOptions.stroke" [fill]="ToplocationsChartOptions.fill"
+                [yaxis]="ToplocationsChartOptions.yaxis" [title]="ToplocationsChartOptions.title"
+                [tooltip]="ToplocationsChartOptions.tooltip" [legend]="ToplocationsChartOptions.legend">
+            </apx-chart>
+        </div>
+        <!-- row -->
+        <div class="row m-t-40 text-center text-lg-left">
+            <!-- column -->
+            <div class="col-xs-12 col-md-4">
+                <div class="mb-2 mt-2">
+                    <span class="label label-success label-rounded">+23%</span>
+                    <h5 class="font-normal text-muted m-t-10 m-b-5">United States</h5>
+                    <span class="font-20 font-medium">3234
+                        <span class="font-14 font-normal text-muted">($3549.54)</span>
+                    </span>
+                </div>
+            </div>
+            <!-- column -->
+            <div class="col-xs-12 col-md-4">
+                <div class="mb-2 mt-2">
+                    <span class="label label-info label-rounded">+0.5%</span>
+                    <h5 class="font-normal text-muted m-t-10 m-b-5">Europe</h5>
+                    <span class="font-20 font-medium">2548
+                        <span class="font-14 font-normal text-muted">($3549.54)</span>
+                    </span>
+                </div>
+            </div>
+            <!-- column -->
+            <div class="col-xs-12 col-md-4">
+                <div class="mb-2 mt-2">
+                    <span class="label label-danger label-rounded">-18%</span>
+                    <h5 class="font-normal text-muted m-t-10 m-b-5">Australia</h5>
+                    <span class="font-20 font-medium">1476
+                        <span class="font-14 font-normal text-muted">($3549.54)</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

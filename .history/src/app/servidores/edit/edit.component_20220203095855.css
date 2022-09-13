@@ -1,0 +1,7 @@
+select {
+    color: white; // color of the selected option
+
+    option {
+      color: black; // color of all the other options
+    }
+}

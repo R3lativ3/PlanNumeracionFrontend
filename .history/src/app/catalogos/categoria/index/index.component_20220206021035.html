@@ -1,0 +1,47 @@
+
+
+
+<a class="btn btn-info float-right"  [routerLink]="['./create']">Agregar</a>
+
+<div class="row">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-uppercase mb-0">Servidores</h5>
+            </div>
+            <br>
+            <div class="table-responsive">
+                <table class="table no-wrap user-table ">
+                    <thead>
+                        <tr>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Categoria</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Rma</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Status</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let res of categorias">
+                            <td>
+                                <h5 class="font-medium mb-0">{{ res.categoriaServidor }}</h5>
+                            </td>
+                            <td>
+                                <h5 class="font-medium mb-0">{{ res.rma }}</h5>
+                            </td>
+                            <td>
+                                <h5 class="font-medium mb-0">{{ res.status }}</h5>
+                            </td>
+                            <td>
+                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  res.id]">
+                                    <i class="fa fa-edit"></i> 
+                                </a>
+                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  res.id]">
+                                    <i class="fa fa-trash"></i> 
+                                </a>                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+

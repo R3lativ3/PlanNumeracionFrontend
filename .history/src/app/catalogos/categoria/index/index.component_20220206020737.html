@@ -1,0 +1,89 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-uppercase mb-0">Servidores</h5>
+                <a class="btn btn-info float-right"  [routerLink]="['./create']">Agregar</a>
+            </div>
+            <br>
+            <div class="table-responsive">
+                <table class="table no-wrap user-table ">
+                    <thead>
+                        <tr>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Categoria</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Rma</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Status</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let res of categorias">
+                            <td>
+                                <h5 class="font-medium mb-0">{{ res.categoriaServidor }}</h5>
+                            </td>
+                            <td>
+                                <h5 class="font-medium mb-0">{{ res.rma }}</h5>
+                            </td>
+                            <td>
+                                <h5 class="font-medium mb-0">{{ res.status }}</h5>
+                            </td>
+                            <td>
+                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  res.id]">
+                                    <i class="fa fa-edit"></i> 
+                                </a>
+                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  res.id]">
+                                    <i class="fa fa-trash"></i> 
+                                </a>                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-uppercase mb-0">Manage Users</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table no-wrap user-table mb-0">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="border-0 text-uppercase font-medium pl-4">#</th>
+                          <th scope="col" class="border-0 text-uppercase font-medium">Name</th>
+                          <th scope="col" class="border-0 text-uppercase font-medium">Occupation</th>
+                          <th scope="col" class="border-0 text-uppercase font-medium">Email</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="pl-4">1</td>
+                          <td>
+                              <h5 class="font-medium mb-0">Daniel Kristeen</h5>
+                              <span class="text-muted">Texas, Unitedd states</span>
+                          </td>
+                          <td>
+                              <span class="text-muted">Visual Designer</span><br>
+                              <span class="text-muted">Past : teacher</span>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle"><i class="fa fa-key"></i> </button>
+                            <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa fa-trash"></i> </button>
+                            <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa fa-edit"></i> </button>
+                            <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa fa-upload"></i> </button>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,77 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title text-uppercase mb-0">Filtrar</h5>
+        <div class="row">
+           
+            <div class="col-md-6">
+                <div class="form-group has-success">
+                    <label class="control-label">Version Sistema Operativo</label>
+                    <select [(ngModel)]="serv.idVersionSistemaOperativo" name="idVersionSistemaOperativo" class="form-control custom-select form-control-sm">
+                        <option [value]="version.id"  *ngFor="let version of versionesSistemaOperativo">{{version.version}} ({{version.sistemaOperativo}})</option>
+                    </select>
+                </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-6">
+                <div class="form-group has-success">
+                    <label class="control-label">Modelo HW</label>
+                    <select [(ngModel)]="serv.idModeloHW" name="idModeloHW" class="form-control custom-select form-control-sm">
+                        <option [value]="modelo.id" *ngFor="let modelo of modelosHW">{{ modelo.modelo }}</option>
+                    </select>
+                </div>
+            </div>
+            <!--/span-->
+        </div>
+        <!--/row-->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group has-success">
+                    <label class="control-label">Ubicacion Fisica</label>
+                    <select [(ngModel)]="serv.idUbicacion" name="idUbicacion" class="form-control custom-select">
+                        <option [value]="ubicacion.id" *ngFor="let ubicacion of ubicaciones">{{ ubicacion.ubicacionServidor }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group has-success">
+                    <label class="control-label">Empresa</label>
+                    <select [(ngModel)]="serv.idEmpresa" name="idEmpresa" class="form-control custom-select">
+                        <option [value]="empresa.id" *ngFor="let empresa of empresas">{{ empresa.nombreEmpresa }}</option>
+                    </select>
+                </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-4">
+                <div class="form-group has-success">
+                    <label class="control-label">Ambiente</label>
+                    <select [(ngModel)]="serv.idAmbiente" name="idAmbiente" class="form-control custom-select">
+                        <option [value]="ambiente.id" *ngFor="let ambiente of ambientes">{{ ambiente.tipoAmbiente }}</option>
+                    </select>
+                </div>
+            </div>
+            <!--/span-->
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group has-success">
+                    <label class="control-label">Virtualizador</label>
+                    <select [(ngModel)]="serv.idVirtualizador" name="idVirtualizador" class="form-control custom-select">
+                        <option [value]="virtualizador.id" *ngFor="let virtualizador of virtualizadores">{{ virtualizador.virtualizador }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group has-success">
+                    <label class="control-label">Virtualizador</label>
+                    <select [(ngModel)]="serv.idVirtualizador" name="idVirtualizador" class="form-control custom-select">
+                        <option [value]="categoria.id" *ngFor="let categoria of categorias">{{ categoria.categoriaServidor }}</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <a href="#" class="btn btn-info">Buscar</a>
+    </div>
+</div>

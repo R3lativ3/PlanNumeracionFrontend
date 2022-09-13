@@ -1,0 +1,143 @@
+<!-- Work Tab Form Starts -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-4 col-md-6">
+            <div class="cardx bg-pattern">
+                <div class="card-body">
+                    <div class="float-right">
+                        <i class="fa fa-file h4 ml-3"></i>
+                    </div>
+                    <h4 class="font-size-20 mt-0 pt-1">24</h4>
+                    <p class="text-muted mb-0">Elementos Cargados</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+            <div class="cardx bg-pattern">
+                <div class="card-body">
+                    <div class="float-right">
+                        <i class="fa fa-file text-success h4 ml-3"></i>
+                    </div>
+                    <h4 class="font-size-20 mt-0 pt-1">18</h4>
+                    <p class="text-muted mb-0">Elementos Exitosos</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+            <div class="cardx bg-pattern">
+                <div class="card-body">
+                    <div class="float-right">
+                        <i class="fa fa-file text-danger h4 ml-3"></i>
+                    </div>
+                    <h4 class="font-size-20 mt-0 pt-1">06</h4>
+                    <p class="text-muted mb-0">Elementos Erroneos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Row -->
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="card border-top border-success">
+            <div class="card-body">
+                <div class="d-flex no-block align-items-center">
+                    <div>
+                        <h2>120</h2>
+                        <h6 class="text-success">Top Locations</h6>
+                    </div>
+                    <div class="ml-auto">
+                        <span class="text-success display-6">
+                            <i class="ti-map-alt"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="card border-top border-dark">
+            <div class="card-body">
+                <div class="d-flex no-block align-items-center">
+                    <div>
+                        <h2>201</h2>
+                        <h6 class="text-dark">Top Activity Pages</h6>
+                    </div>
+                    <div class="ml-auto">
+                        <span class="text-dark display-6">
+                            <i class="ti-check-box"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="card border-top border-info">
+            <div class="card-body">
+                <div class="d-flex no-block align-items-center">
+                    <div>
+                        <h2>140</h2>
+                        <h6 class="text-info">Top Sales</h6>
+                    </div>
+                    <div class="ml-auto">
+                        <span class="text-info display-6">
+                            <i class="ti-bar-chart-alt"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="card border-top border-cyan">
+            <div class="card-body">
+                <div class="d-flex no-block align-items-center">
+                    <div>
+                        <h2>160</h2>
+                        <h6 class="text-cyan">Top Feeds</h6>
+                    </div>
+                    <div class="ml-auto">
+                        <span class="text-cyan display-6">
+                            <i class="ti-receipt"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <h4 class="card-title">Lineas Con Errores</h4>
+
+    <div class="card">
+        <div class="card-body">
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Linea</th>
+                    <th scope="col">Error</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">18</th>
+                    <td>invalid value for: $?</td>
+                </tr>
+                <tr>
+                    <th scope="row">19</th>
+                    <td>invalid value for: $?</td>
+                </tr>
+                <tr>
+                    <th scope="row">20</th>
+                    <td colspan="2">invalid value for: $?</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="form-group text-center space-20">
+    <button uiSref="personal" type="button" class="btn btn-raised btn-secondary mr-1" (click)="cancel()">Regresar</button>
+    <button uiSref="address" type="button" class="btn btn-raised btn-info" (click)="save()">Continuar</button>
+</div>

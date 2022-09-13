@@ -1,0 +1,79 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title text-uppercase mb-0">Filtrar</h5>
+        <div class="row">
+           
+            <div class="col-md-12">
+                <div class="form-group has-success">
+                    <label class="control-label">Actividad</label>
+                    <select [(ngModel)]="busqueda.idActividad" name="idActividad" class="form-control custom-select form-control-sm">
+                        <option [value]="item.id"  *ngFor="let item of actividades">{{item.nombreActividad}}</option>
+                    </select>
+                </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-12">
+                <div class="form-group has-success">
+                    <label class="control-label">Tipo de Actividad</label>
+                    <select [(ngModel)]="busqueda.idTipoActividad" name="idTipoActividad" class="form-control custom-select form-control-sm">
+                        <option [value]="item.id" *ngFor="let item of tiposActividad">{{ item.nombreActividad }}</option>
+                    </select>
+                </div>
+            </div>
+            <!--/span-->
+        </div>
+        <!--/row-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group has-success">
+                    <label class="control-label">Responsable</label>
+                    <select [(ngModel)]="busqueda.idResponsable" name="idResponsable" class="form-control custom-select">
+                        <option [value]="item.id" *ngFor="let item of responsablesActividad">{{ item.responsable }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group has-success">
+                    <label class="control-label">Estatus de Ejecucion</label>
+                    <select [(ngModel)]="busqueda.idEstatusEjecucion" name="idEstatusEjecucion" class="form-control custom-select">
+                        <option [value]="item.id" *ngFor="let item of estatusEjecuciones">{{ item.estatus }}</option>
+                    </select>
+                </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-12">
+                <div class="form-group has-success">
+                    <label class="control-label">Periodicidad</label>
+                    <select [(ngModel)]="busqueda.idPeriodicidad" name="idPeriodicidad" class="form-control custom-select">
+                        <option [value]="item.id" *ngFor="let item of periodicidades">{{ item.periodo }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="ename" class="col-sm-3 text-right control-label col-form-label">RFC</label>
+                <div class="col-sm-6">
+                    <input [(ngModel)]="busqueda.rfc" name="rfc" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="ename" class="col-sm-3 text-right control-label col-form-label">Fecha de Ejecucion</label>
+                <div class="col-sm-6">
+                    <input [(ngModel)]="busqueda.fechaEjecucion" name="fechaEjecucion" type="date" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="ename" class="col-sm-3 text-right control-label col-form-label">Fecha de Carga</label>
+                <div class="col-sm-6">
+                    <input [(ngModel)]="busqueda.fechaCarga" name="fechaCarga" type="date" class="form-control">
+                </div>
+            </div>
+
+        </div>
+
+        <a (click)="sendSearch()" class="btn btn-info">Buscar</a>
+    </div>
+</div>
+{{ getData() | json}}

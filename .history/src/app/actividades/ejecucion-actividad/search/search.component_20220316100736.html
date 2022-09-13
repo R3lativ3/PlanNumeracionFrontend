@@ -1,0 +1,73 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title text-uppercase mb-0">Filtrar</h5>
+        <div class="row">
+           
+            <div class="col-md-12">
+                <div class="form-group has-success">
+                    <label class="control-label">Actividad</label>
+                    <select [(ngModel)]="busqueda.idActividad" name="idActividad" class="form-control custom-select form-control-sm">
+                        <option [value]="item.id"  *ngFor="let item of actividades">{{item.nombreActividad}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group has-success">
+                    <label class="control-label">Estatus de Ejecucion</label>
+                    <select [(ngModel)]="busqueda.idEstatus" name="idEstatusEjecucion" class="form-control custom-select">
+                        <option [value]="item.id" *ngFor="let item of estatusEjecuciones">{{ item.estatus }}</option>
+                    </select>
+                </div>
+            </div>
+            <!--/span-->
+        </div>
+        <!--/row-->
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="form-group has-success">
+                    <label class="control-label">RFC</label>
+                    <input [(ngModel)]="busqueda.rfc" name="rfc" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group has-success">
+                    <label class="control-label">Fecha de Ejecucion</label>
+                    <input [(ngModel)]="busqueda.fechaEjecucion" name="fechaEjecucion" type="date" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group has-success">
+                    <label class="control-label">Fecha de Carga</label>
+                    <input [(ngModel)]="busqueda.fechaCarga" name="fechaCarga" type="date" class="form-control">
+                </div>
+            </div>
+
+        </div>
+
+        <h4>Periodo</h4>
+        <hr>
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group has-success">
+                    <label class="control-label">Fecha de Ejecucion</label>
+                    <input [(ngModel)]="busqueda.fechaEjecucion" name="fechaEjecucion" type="date" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group has-success">
+                    <label class="control-label">Fecha de Carga</label>
+                    <input [(ngModel)]="busqueda.fechaCarga" name="fechaCarga" type="date" class="form-control">
+                </div>
+            </div>
+
+        </div>
+
+        <a (click)="sendSearch()" class="btn btn-info">Buscar</a>
+    </div>
+</div>
+{{ getData() | json}}

@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <div>
+                <h4 class="card-title">Sales Ratio</h4>
+            </div>
+            <div class="ml-auto">
+                <div class="dl m-b-10">
+                    <select class="custom-select border-0 text-muted">
+                        <option value="0" selected="">August 2018</option>
+                        <option value="1">May 2018</option>
+                        <option value="2">March 2018</option>
+                        <option value="3">June 2018</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="sales5 ct-charts m-t-30 d-flex flex-column">
+            <apx-chart [series]="salesratioChartOptions.series" [chart]="salesratioChartOptions.chart"
+                [xaxis]="salesratioChartOptions.xaxis" [yaxis]="salesratioChartOptions.yaxis"
+                [grid]="salesratioChartOptions.grid" [stroke]="salesratioChartOptions.stroke"
+                [fill]="salesratioChartOptions.fill" [tooltip]="salesratioChartOptions.tooltip"
+                [dataLabels]="salesratioChartOptions.dataLabels" [legend]="salesratioChartOptions.legend"
+                [colors]="salesratioChartOptions.colors" [markers]="salesratioChartOptions.markers">
+            </apx-chart>
+        </div>
+        <ul class="list-inline m-t-30 text-center font-12">
+            <li class="list-inline-item text-muted">
+                <i class="fa fa-circle text-info m-r-5"></i> Xtreme Admin</li>
+            <li class="list-inline-item text-muted">
+                <i class="fa fa-circle text-success m-r-5"></i> MaterialPro Admin</li>
+        </ul>
+    </div>
+</div>

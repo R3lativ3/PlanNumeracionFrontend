@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Ingresa los datos</h4>
+            </div>
+            <hr>
+            <form class="form-horizontal" *ngIf="!loading">
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="ename" class="col-sm-3 text-right control-label col-form-label">RFC</label>
+                        <div class="col-sm-6">
+                            <input [(ngModel)]="ejecucion.rfc" name="categoriaServidor" class="form-control" id="ename" placeholder="PCI">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label for="ename" class="col-sm-3 text-right control-label col-form-label">Fecha de Ejecucion</label>
+                        <div class="col-sm-6">
+                            <input [(ngModel)]="ejecucion.fechaEjecucion" name="eos" type="date" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label for="ename" class="col-sm-3 text-right control-label col-form-label">Observaciones</label>
+                        <div class="col-sm-6">
+                            <input [(ngModel)]="ejecucion.observaciones" name="osbervaciones" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label class="control-label text-right col-md-3">Actividad</label>
+                        <div class="col-sm-6">
+                            <select [(ngModel)]="ejecucion.idActividadServidor" name="idAmbiente" class="form-control custom-select">
+                                <option [value]="item.id" *ngFor="let item of actividades">{{ item.nombreActividad }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label class="control-label text-right col-md-3">Estatus</label>
+                        <div class="col-sm-6">
+                            <select [(ngModel)]="ejecucion.idEstatusEjecucion" name="idAmbiente" class="form-control custom-select">
+                                <option [value]="item.id" *ngFor="let item of estatusEjecuciones">{{ item.estatus }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="card-body">
+                    <div class="form-group m-b-0 text-right">
+                        <button class="btn btn-info waves-effect waves-light" (click)="create()">Save</button>
+                        <button class="btn btn-dark waves-effect waves-light">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{ getModel() | json }} 

@@ -1,0 +1,198 @@
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card border-left border-info">
+            <div class="card-header">
+                <h4 class="card-title text-uppercase mb-0">Informacion General</h4>
+            </div>
+            <form action="#">
+                <div class="form-body">
+                    <div class="card-body">
+                        <div class="row p-t-20">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label">Hostname</label>
+                                    <input type="text" [(ngModel)]="serv.hostname" name="hostname" class="form-control" placeholder="ATT.SERVICIO.MX">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group has-success">
+                                    <label class="control-label">Version Sistema Operativo</label>
+                                    <select [(ngModel)]="serv.idVersionSistemaOperativo" name="idVersionSistemaOperativo" class="form-control custom-select form-control-sm">
+                                        <option [value]="version.id"  *ngFor="let version of versionesSistemaOperativo">{{version.version}} ({{version.sistemaOperativo}})</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-4">
+                                <div class="form-group has-success">
+                                    <label class="control-label">Modelo HW</label>
+                                    <select [(ngModel)]="serv.idModeloHW" name="idModeloHW" class="form-control custom-select form-control-sm">
+                                        <option [value]="modelo.id" *ngFor="let modelo of modelosHW">{{ modelo.modelo }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <!--/row-->
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group has-success">
+                                    <label class="control-label">Ubicacion Fisica</label>
+                                    <select [(ngModel)]="serv.idUbicacion" name="idUbicacion" class="form-control custom-select">
+                                        <option [value]="ubicacion.id" *ngFor="let ubicacion of ubicaciones">{{ ubicacion.ubicacionServidor }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group has-success">
+                                    <label class="control-label">Empresa</label>
+                                    <select [(ngModel)]="serv.idEmpresa" name="idEmpresa" class="form-control custom-select">
+                                        <option [value]="empresa.id" *ngFor="let empresa of empresas">{{ empresa.nombreEmpresa }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-4">
+                                <div class="form-group has-success">
+                                    <label class="control-label">Ambiente</label>
+                                    <select [(ngModel)]="serv.idAmbiente" name="idAmbiente" class="form-control custom-select">
+                                        <option [value]="ambiente.id" *ngFor="let ambiente of ambientes">{{ ambiente.tipoAmbiente }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <!--/row-->
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group has-success">
+                                    <label class="control-label">Virtualizador</label>
+                                    <select [(ngModel)]="serv.idVirtualizador" name="idVirtualizador" class="form-control custom-select">
+                                        <option [value]="virtualizador.id" *ngFor="let virtualizador of virtualizadores">{{ virtualizador.virtualizador }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="form-group has-success">
+                                    <label class="control-label">Estatus</label>
+                                    <select [(ngModel)]="serv.idEstatusServidor" name="idEstatusServidor" class="form-control custom-select">
+                                        <option [value]="estatusServidor.id" *ngFor="let estatusServidor of estatusServidores">{{ estatusServidor.estatus }}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="control-label">Categoria</label><br>
+                                <div *ngFor="let categoria of categorias" class="form-check form-check-inline">
+                                    <input [(ngModel)]="serv.idCategoria" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" [value]="categoria.id">
+                                    <label class="form-check-label" for="inlineRadio1">{{ categoria.categoriaServidor }}</label>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label">Fecha de Alta</label>
+                                    <input [(ngModel)]="serv.eol" name="eol" type="date" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label">EOS</label>
+                                    <input [(ngModel)]="serv.eos" name="eos" type="date" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label">EOL</label>
+                                    <input [(ngModel)]="serv.eol" name="eol" type="date" class="form-control">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-1">
+                                <label class="control-label">RMA</label>
+                                <div class="form-check">
+                                    <input [(ngModel)]="serv.rma" name="rma" class="form-check-input" type="checkbox" value="1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                      Si
+                                    </label>
+                                  </div>
+                            </div>
+                            <div class="col-md-1">
+                                <label class="control-label">AL</label>
+                                <div class="form-check">
+                                    <input [(ngModel)]="serv.al" name="al" class="form-check-input" type="checkbox" value="1" >
+                                    <label class="form-check-label" for="defaultCheck1">
+                                      Si
+                                    </label>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" *ngIf="serv.al">
+                                <div class="form-group">
+                                    <label class="control-label">Motivo AL</label>
+                                    <textarea [(ngModel)]="serv.notas" name="observaciones" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label">Observaciones</label>
+                                    <textarea [(ngModel)]="serv.notas" name="observaciones" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card border-left border-info">
+                <div class="card-header">
+                    <h4 class="card-title text-uppercase mb-0">Asignar Roles</h4>
+                </div>
+                <form action="#">
+                    <div class="form-body">
+                        <div class="card-body">
+                            <fieldset class="checkbox">
+                                <label *ngFor="let rol of roles" style="padding-right: 10px;">
+                                    <input type="checkbox" [value]="rol.id" (change)="addRol(rol.id, $event)"> {{ rol.rol }}
+                                </label>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <app-ip-assign [tiposIp] = tiposIp  (event)="receiveIps($event)"></app-ip-assign>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card border-left border-info">
+                <div class="card-header">
+                    <h4 class="card-title text-uppercase mb-0">Asignar Actividades</h4>
+                </div>
+                <div class="card-body">
+                    <app-search-combo (event)="receiveMessage($event)"></app-search-combo>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12">
+        <button type="button" class="btn btn-block btn-outline-info" (click)="create()">Crear</button>
+    </div>
+
+    {{getServidor() | json}}

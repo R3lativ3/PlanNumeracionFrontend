@@ -1,0 +1,51 @@
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body" style="padding-bottom: 0%;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="card-title text-uppercase">Periodicidades</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="btn btn-info float-right"  [routerLink]="['./create']">Agregar</a>
+                    </div>
+                </div>
+            </div>
+            <div >
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                        <th scope="col" class="border-0 text-uppercase font-medium"></th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Periodicidad</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Status</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let res of periodicidades">
+                            <td>
+                                <h5 class="font-medium mb-0"></h5>
+                            </td>
+                            <td style="line-height: 50px; vertical-align: middle;">
+                                <h5 class="font-medium mb-0">{{ res.periodo }}</h5>
+                            </td>
+                            <td style="vertical-align: middle;">
+                                <h5 class="font-medium mb-0">{{ res.status }}</h5>
+                            </td>
+                            <td style="vertical-align: middle;">
+                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  res.id]">
+                                    <i class="fa fa-edit"></i> 
+                                </a>
+                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  res.id]">
+                                    <i class="fa fa-trash"></i> 
+                                </a>                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

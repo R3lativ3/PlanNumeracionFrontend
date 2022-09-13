@@ -1,0 +1,190 @@
+
+<div *ngIf="loading else info">
+    <div class="d-flex align-items-center">
+        <strong>Loading...</strong>
+        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+    </div>
+</div>
+
+
+
+
+<ng-template #info>
+    <div class="row">   
+        <div class="col-lg-12">
+            <div class="recent-activities card">
+                <div class="card-close">
+                    <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                        <button class="btn btn-secondary " ngbDropdownToggle></button>
+                        <div class="dropdown-menu" ngbDropdownMenu>
+                            <button class="dropdown-item">Editar</button>
+                            <button class="dropdown-item text-danger">Eliminar</button>                        
+                        </div>
+                    </div>
+                </div>
+            <div class="card-header">
+              <h3 class="h2">{{servidor.hostname}}</h3>
+            </div>
+            <div class="card-body no-padding">
+                <form class="row g-3">
+                    <div class="col-md-4">
+                        <label for="inputEmail4" class="form-label">Sistema Operativo</label>
+                        <input value='{{ servidor.sistemaOperativo }}' type="text" class="form-control" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputPassword4" class="form-label">Version Sistema Operativo</label>
+                        <input value='{{ servidor.versionSistemaOperativo }}' type="text" class="form-control" readonly>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <label for="inputAddress2" class="form-label">Ambiente</label>
+                        <input value='{{ servidor.ambiente }}' type="text" class="form-control" readonly>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="inputCity" class="form-label">Ubicacion</label>
+                        <input value='{{ servidor.ubicacionServidor }}' type="text" class="form-control" readonly>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="inputCity" class="form-label">Empresa</label>
+                        <input value='{{ servidor.nombreEmpresa }}' type="text" class="form-control" readonly>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="inputCity" class="form-label">Virtualizador</label>
+                        <input value='{{ servidor.virtualizador }}' type="text" class="form-control" readonly>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="inputCity" class="form-label">Estatus</label>
+                        <input value='{{ servidor.estatus }}' type="text" class="form-control" readonly>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="inputCity" class="form-label">Categoria</label>
+                        <input value='{{ servidor.categoria }}' type="text" class="form-control" readonly>
+                    </div>
+
+                    <div class="col-4">
+                        <label for="inputAddress" class="form-label">Modelo HW</label>
+                        <input value='{{ servidor.modeloHW }}' type="text" class="form-control" readonly>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </div>
+<h3>Relaciones</h3>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header no-border">
+                    <h5 class="card-title">IPs Asignadas</h5>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="widget-49">
+                        <div *ngFor="let item of servidor.ipsAsignadas" class="widget-49-title-wrapper">
+                            <div *ngIf="item.status == 1; then thenBlock else elseBlock"></div>
+                                <ng-template #thenBlock>
+                                    <div class="widget-49-date-success">
+                                        <span class="widget-49-date-day"><i class="fas fa-check"></i></span>
+                                    </div>
+                                </ng-template>
+                                <ng-template #elseBlock>
+                                    <div class="widget-49-date-warning">
+                                        <span class="widget-49-date-day"><i class="fas fa-exclamation"></i></span>
+                                    </div>
+                                </ng-template>
+                            <div class="widget-49-meeting-info">
+                                <span class="widget-49-pro-title">{{ item.ip }} <span class="badge rounded-pill bg-light text-success">{{ item.tipo }}</span></span>
+                                <span class="widget-49-meeting-time">
+                                    <i style="color:rgba(48, 100, 197, 0.616);" class="fas fa-calendar-check"></i> {{ item.fechaAsignacion.split('T')[0] }} 
+                                    <i style="color:rgba(231, 58, 27, 0.507);" class="fas fa-calendar-times" *ngIf="!item.fechaConsignacion.split('T')[0] == '0001-01-01'"></i> - 
+                                    {{ item.fechaConsignacion.split('T')[0] == '0001-01-01' ? " " : item.fechaCarga.split('T')[0] }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="widget-49-meeting-action">
+                            <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card card-margin">
+                <div class="card-header no-border">
+                    <h5 class="card-title">Roles Asignados</h5>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="widget-49">
+                        <div *ngFor="let item of servidor.aplicacionesAsignadas" class="widget-49-title-wrapper">
+                            <div *ngIf="item.status == 1; then thenBlock else elseBlock"></div>
+                                <ng-template #thenBlock>
+                                    <div class="widget-49-date-success">
+                                        <span class="widget-49-date-day"><i class="fas fa-check"></i></span>
+                                    </div>
+                                </ng-template>
+                                <ng-template #elseBlock>
+                                    <div class="widget-49-date-warning">
+                                        <span class="widget-49-date-day"><i class="fas fa-exclamation"></i></span>
+                                    </div>
+                                </ng-template>
+                            <div class="widget-49-meeting-info">
+                                <span class="widget-49-pro-title">{{ item.aplicacion }} </span>
+                                <span class="widget-49-meeting-time">
+                                    <i style="color:rgba(48, 100, 197, 0.616);" class="fas fa-calendar-check"></i> {{ item.fechaAsignacion.split('T')[0] }} - 
+                                </span>
+                                <span class="widget-49-meeting-time">
+                                    <i style="color:rgba(231, 58, 27, 0.507);" class="fas fa-calendar-times"></i> {{ item.fechaFinalizacion.split('T')[0] }}
+                                </span>
+
+                            </div>
+                        </div>
+                        <div class="widget-49-meeting-action">
+                            <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card card-margin">
+                <div class="card-header no-border">
+                    <h5 class="card-title">Actividades Asignadas</h5>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="widget-49">
+                        <div *ngFor="let item of servidor.rolesAsignados" class="widget-49-title-wrapper">
+                            <div *ngIf="item.status == 1; then thenBlock else elseBlock"></div>
+                                <ng-template #thenBlock>
+                                    <div class="widget-49-date-success">
+                                        <span class="widget-49-date-day"><i class="fas fa-check"></i></span>
+                                    </div>
+                                </ng-template>
+                                <ng-template #elseBlock>
+                                    <div class="widget-49-date-warning">
+                                        <span class="widget-49-date-day"><i class="fas fa-exclamation"></i></span>
+                                    </div>
+                                </ng-template>
+                            <div class="widget-49-meeting-info">
+                                <span class="widget-49-pro-title">{{ item.rol }} </span>
+                                <span class="widget-49-meeting-time">
+                                    <i style="color:rgba(48, 100, 197, 0.616);" class="fas fa-calendar-check"></i> {{ item.fechaAsignacion.split('T')[0] }} - 
+                                    <i style="color:rgba(231, 58, 27, 0.507);" class="fas fa-calendar-times"></i> {{ item.fechaFinalizacion.split('T')[0] }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="widget-49-meeting-action">
+                            <a href="#" class="btn btn-sm btn-flash-border-primary">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ng-template>

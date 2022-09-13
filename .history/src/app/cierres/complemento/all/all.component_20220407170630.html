@@ -1,0 +1,431 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card bg-light ">
+            <div class="card-body text-center">
+                <div class="text-dark">
+                    <h2>Resumen Cierre Complemento</h2>
+                    <h5 class="font-dark">Enero 2022</h5>
+                </div>
+            </div>
+        </div>
+
+        <div style="float:right">
+            <a class="btn btn-info" href="assets/Calculo altas Armalo Enero 2022 Complemento_Ori.xlsb" target="_blank" download="Calculo altas Armalo Enero 2022 Complemento_Ori.xlsb"><i class="fas fa-file"></i> Altas</a>
+            <a class="btn btn-info" href="assets/Calculo Cancelaciones Armalo Enero 2022 Complemento_Ori.xlsx" target="_blank" download="Calculo Cancelaciones Armalo Enero 2022 Complemento_Ori.xlsx"><i class="fas fa-file"></i> Cancelaciones</a>
+            <a class="btn btn-info" href="assets/Rollforward Descuento de equipo Enero 2022.xlsx" target="_blank" download="Rollforward Descuento de equipo Enero 2022.xlsx"><i class="fas fa-file"></i> Rollforward</a>
+        </div>
+        
+
+        <div class="row">
+            <div class="col-md-6">
+                <div style="display: block; width: 800px; margin-left: auto; margin-right: auto;">
+                    <canvas baseChart
+                        [data]="doughnutChartData"
+                        [labels]="doughnutChartLabels"
+                        [chartType]="doughnutChartType"
+                        [colors]="chartColors"
+                    >
+                    </canvas>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+
+                <apx-chart [series]="yearlycompareChartOptions.series" [chart]="yearlycompareChartOptions.chart"
+                    [xaxis]="yearlycompareChartOptions.xaxis" [yaxis]="yearlycompareChartOptions.yaxis"
+                    [grid]="yearlycompareChartOptions.grid" [stroke]="yearlycompareChartOptions.stroke"
+                    [tooltip]="yearlycompareChartOptions.tooltip" [fill]="yearlycompareChartOptions.fill"
+                    [plotOptions]="yearlycompareChartOptions.plotOptions"
+                    [dataLabels]="yearlycompareChartOptions.dataLabels" [legend]="yearlycompareChartOptions.legend"
+                    [colors]="yearlycompareChartOptions.colors" [markers]="yearlycompareChartOptions.markers">
+                </apx-chart>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div id="myCarousel44" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item flex-column active">
+                                <div class="d-flex no-block al m-r-15ign-items-center">
+                                    <i class="text-dark display-6 m-r-15" title="BTM"></i>
+                                    <div class="m-t-10">
+                                        <h5 class="text-dark font-medium">ENDING BALANCE AS OF DECEMBER 31, 2021 MXP
+                                        </h5>
+                                        <h4 class="text-success"> 1.618.248.644 
+                                        </h4>
+                                    </div>
+                                    <div class="ml-auto m-t-15">
+                                        <div class="crypto"></div>
+                                    </div>
+                                </div>
+
+                                <label style="float:right">PL 21.1142</label>
+
+                                <div class="row text-center text-dark m-t-30">
+                                    <div class="col-4">
+                                        <span class="font-14">Por aplicar C.P.2</span>
+                                        <p class="font-medium">
+                                            <i class="fa fa-plus text-success"></i> 720,176,165</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-14">Por aplicar L</span>
+                                        <p class="font-medium">
+                                            <i class="fa fa-plus text-success"></i> 898,072,479</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-14">Total</span>
+                                        <p class="font-medium">
+                                            <i class="fa fa-plus text-success"></i> 1,618,248,644</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div id="myCarousel44" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item flex-column active">
+                                <div class="d-flex no-block al m-r-15ign-items-center">
+                                    <i class="text-dark display-6 m-r-15" title="BTM"></i>
+                                    <div class="m-t-10">
+                                        <h5 class="text-dark font-medium">Discount</h5>
+                                        <h4 class="text-success">258,129,036</h4>
+                                    </div>
+                                    <div class="ml-auto m-t-15">
+                                        <div class="crypto"></div>
+                                    </div>
+                                </div>
+
+                                <label style="float:right">PL 21.1142</label>
+
+                                <div class="row text-center text-dark m-t-30">
+                                    <div class="col-4">
+                                        <span class="font-14">Por aplicar C.P.2</span>
+                                        <p class="font-medium ">
+                                            <i class="fa fa-plus text-success"></i>  99.949.649 
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-14">Por aplicar L.P</span>
+                                        <p class="font-medium ">
+                                            <i class="fa fa-plus text-success"></i>  158.179.387 
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-14">Total</span>
+                                        <p class="font-medium ">
+                                            <i class="fa fa-plus text-success"></i>  258.129.036 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div id="myCarousel44" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item flex-column active">
+                                <div class="d-flex no-block al m-r-15ign-items-center">
+                                    <i class="cc text-dark display-6 m-r-15" title="BTM"></i>
+                                    <div class="m-t-10">
+                                        <h5 class="text-dark font-medium">Notas de Crédito
+                                            Amortization
+                                            </h5>
+                                        <h4 class="text-danger"> (67.728.832)
+                                        </h4>
+                                    </div>
+                                    <div class="ml-auto m-t-15">
+                                        <div class="crypto"></div>
+                                    </div>
+                                </div>
+
+                                <label style="float:right">PL 21.1142</label>
+
+                                <div class="row text-center text-dark m-t-30">
+                                    <div class="col-4">
+                                        <span class="font-14">Por aplicar C.P.2</span>
+                                        <p class="font-medium ">
+                                            <i class="fa fa-minus text-danger"></i>  (67.728.832)
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-14">Por aplicar L</span>
+                                        <p class="font-medium">
+                                            <i></i>0</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-14">Total</span>
+                                        <p class="font-medium ">
+                                            <i class="fa fa-minus text-danger"></i> (67.728.832)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div id="myCarousel44" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item flex-column active">
+                                <div class="d-flex no-block al m-r-15ign-items-center">
+                                    <i class=" text-dark display-6 m-r-15" title="BTM"></i>
+                                    <div class="m-t-10">
+                                        <h5 class="text-dark font-medium">Cancelations
+                                        </h5>
+                                        <h4 class="text-danger"> (22.273.067)
+                                        </h4>
+                                    </div>
+                                </div>
+
+                                <label style="float:right">PL 21.1142</label>
+
+                                <div class="row text-center text-dark m-t-30">
+                                    <div class="col-4">
+                                        <span class="font-14 ">Por aplicar C</span>
+                                        <p class="font-medium">
+                                            <i class="fa fa-minus text-danger"></i>  (10.469.718)
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-14">Por aplicar L</span>
+                                        <p class="font-medium">
+                                            <i class="fa fa-minus  text-danger"></i>  (11.803.349)
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-14">Total</span>
+                                        <p class="font-medium">
+                                            <i class="fa fa-minus text-danger"></i>  (22.273.067)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div id="myCarousel44" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item flex-column active">
+                                <div class="d-flex no-block al m-r-15ign-items-center">
+                                    <i class="text-dark display-6 m-r-15" title="BTM"></i>
+                                    <div class="m-t-10">
+                                        <h5 class="text-dark font-medium">TRUE UP
+                                            Discount
+                                            </h5>
+                                        <h4 class="text-success"> 11.850.894 
+                                        </h4>
+                                    </div>
+                                </div>
+
+                                <label style="float:right">PL 21.1142</label>
+
+                                <div class="row text-center text-dark m-t-30">
+                                    <div class="col-4">
+                                        <span class="font-14">Por aplicar C</span>
+                                        <p class="font-medium">
+                                            <i class="fa fa-plus text-success"></i>  3.436.471 
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-14">Por aplicar L</span>
+                                        <p class="font-medium">
+                                            <i class="fa fa-plus text-success"></i>  8.414.423 
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-14">Total</span>
+                                        <p class="font-medium">
+                                            <i class="fa fa-plus text-success"></i>  11.850.894 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div id="myCarousel44" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item flex-column active">
+                                <div class="d-flex no-block al m-r-15ign-items-center">
+                                    <i class="text-dark display-6 m-r-15" title="BTM"></i>
+                                    <div class="m-t-10">
+                                        <h5 class="text-dark font-medium">TRUE UP Cancellations
+                                        </h5>
+                                        <h4 class="text-danger"> (519.120)
+                                        </h4>
+                                    </div>
+                                    <div class="ml-auto m-t-15">
+                                        <div class="crypto"></div>
+                                    </div>
+                                </div>
+
+                                <label style="float:right">PL 21.1142</label>
+
+                                <div class="row text-center text-dark m-t-30">
+                                    <div class="col-4">
+                                        <span class="font-14">Por aplicar C</span>
+                                        <p class="font-medium">
+                                            <i class="fa fa-minus text-danger"></i>  (346.582)
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-14">Por aplicar L</span>
+                                        <p class="font-medium">
+                                            <i class="fa fa-minus text-danger"></i>  (172.538)
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-14">Total</span>
+                                        <p class="font-medium">
+                                            <i class="fa fa-minus text-danger"></i>  (519.120)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div id="myCarousel44" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item flex-column active">
+                                <div class="d-flex no-block al m-r-15ign-items-center">
+                                    <i class="text-dark display-6 m-r-15" title="BTM"></i>
+                                    <div class="m-t-10">
+                                        <h5 class="text-dark font-medium">Reclasification
+
+                                        </h5>
+                                        <h4 class="text-dark">0</h4>
+                                    </div>
+                                    <div class="ml-auto m-t-15">
+                                        <div class="crypto"></div>
+                                    </div>
+                                </div>
+
+                                <label style="float:right">PL 21.1142</label>
+
+                                <div class="row text-center text-dark m-t-30">
+                                    <div class="col-4">
+                                        <span class="font-14">Por aplicar C</span>
+                                        <p class="font-medium">
+                                            <i class="fa fa-plus text-success"></i>  67.728.832 
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-14">Por aplicar L</span>
+                                        <p class="font-medium">
+                                            <i class="fa fa-minus text-danger"></i>  (67.728.832) 
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-14">Total</span>
+                                        <p class="font-medium">
+                                             0</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="col-md-12">
+            <div class="card bg-secondary">
+                <div class="card-body">
+                    <div id="myCarousel44" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item flex-column active">
+                                <div class="d-flex no-block al m-r-15ign-items-center">
+                                    <i class="text-dark display-6 m-r-15" title="BTM"></i>
+                                    <div class="m-t-10" style="display: block; margin-left: auto; margin-right: auto;">
+                                        <h5 class="text-white font-medium" >PENDING BALANCE AS OF JANUARY 31, 2022 MXP
+                                        </h5>
+                                        <h1 class="text-success" style="text-align: center ;margin-left: auto; margin-right: auto;"> 
+                                            <i class="fa fa-plus"></i> 1.797.707.555 
+                                        </h1>
+                                    </div>
+                                </div>
+
+                                <div class="row text-center text-white m-t-30">
+                                    <div class="col-4">
+                                        <span class="font-18">Por aplicar C.P.2</span>
+                                        <p class="font-medium text-success font-18">
+                                            <i class="fa fa-plus"></i>  812.745.984 
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-18">Por aplicar L.P.</span>
+                                        <p class="font-medium text-success font-18">
+                                            <i class="fa fa-plus"></i>  984.961.571 
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="font-18">Total</span>
+                                        <p class="font-medium text-success font-18">
+                                            <i class="fa fa-plus"></i>  1.797.707.555 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</div>

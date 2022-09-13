@@ -1,0 +1,11 @@
+<div class="col-md-12">
+    <ng-multiselect-dropdown
+    [placeholder]="'Seleccionar Servidor'"
+    [data]="aplicaciones"
+    [(ngModel)]="selectedItems"
+    [settings]="dropdownSettings"
+    (onSelect)="onItemSelect($event)"
+    (onDeSelect)="onItemDeSelect($event)"
+    >
+    </ng-multiselect-dropdown>    
+</div>

@@ -1,0 +1,46 @@
+<div class="card border-left border-info">
+    <div class="card-header">
+        <h4 class="card-title text-uppercase">Asignar Ip's</h4>
+    </div>
+    <div class="card-body">
+        <div class="form-group row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input [(ngModel)]="ip.numeroIp" name="numeroIp" type="text" class="form-control" placeholder="127.0.0.1">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group has-success">
+
+                            <select [(ngModel)]="ip.tipo"  name="tipoIp" class="form-control custom-select form-control-sm">
+                                <option [value]="tipoIp.id+tipoIp.tipo" *ngFor="let tipoIp of tiposIp">{{ tipoIp.tipo }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div style="float:right;">
+                    <button class="btn btn-info" (click)="addIp(ip)">Agregar</button>
+                </div>
+            </div>
+        </div>
+        
+        <table class="table table-sm" *ngIf="listaIps.length > 0">
+            <thead>
+              <tr>
+                <th scope="col">Ip</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Remover</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let ip of listaIps">
+                <td>{{ ip.numeroIp }}</td>
+                <td>{{ ip.tipo }}</td>
+                <td><button class="btn btn-sm" (click)="deleteFromIpList(ip)">Delete</button></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

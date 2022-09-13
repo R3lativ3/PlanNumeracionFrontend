@@ -1,0 +1,10 @@
+select option {
+    background-color: green;
+    font-weight: bold;
+    color: red;
+}
+
+::selection {
+    background-color: #222;
+    color: white;
+}

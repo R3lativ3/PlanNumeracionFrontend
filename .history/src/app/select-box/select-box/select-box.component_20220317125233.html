@@ -1,0 +1,12 @@
+<div class="col-md-12" *ngIf="ready">
+    <ng-multiselect-dropdown
+    [placeholder]="'Seleccionar Aplicacion'"
+    [data]="models"
+    [(ngModel)]="selectedItems"
+    [settings]="dropdownSettings"
+    (onSelect)="onItemSelect($event)"
+    (onDeSelect)="onItemDeSelect($event)"
+    >
+    </ng-multiselect-dropdown>    
+</div>
+{{ models | json}}
