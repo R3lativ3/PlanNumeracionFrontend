@@ -31,6 +31,11 @@ export const Approutes: Routes = [
         path: "cierres",
         loadChildren: () =>
           import("./cierres/cierres.module").then((m) => m.CierresModule),
+      },
+      {
+        path: "ss",
+        loadChildren: () =>
+          import("./ss/ss.module").then((m) => m.SsModule),
       }
     ],
   },
