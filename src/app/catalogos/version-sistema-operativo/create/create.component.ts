@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { postVersionSistemaOperativo, sistemaOperativo } from '../../model';
 import { VersionSistemaOperativoService } from '../version-sistema-operativo.service';
 import Swal from 'sweetalert2';
-import { SistemaOperativoService } from '../../sistema-operativo/sistema-operativo.service';
 
 @Component({
   selector: 'app-create',
@@ -20,14 +19,9 @@ export class CreateComponent implements OnInit {
     idSistemaOperativo : 1,
     status : 1
   }
-  constructor(private backend: VersionSistemaOperativoService, private so: SistemaOperativoService, private router: Router) { }
+  constructor(private backend: VersionSistemaOperativoService, private router: Router) { }
 
   ngOnInit(): void {
-    this.getSistemasOperativo()
-  }
-
-  getSistemasOperativo(){
-    this.so.all().subscribe(x => this.sistemasOperativos = x)
   }
 
   create(){

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { postUser, users, rolUsuario } from './model';
-import { Response } from 'src/app/servidores/models';
+import { Response } from '../app.models';
 import { Injectable } from '@angular/core';
 
 @Injectable({

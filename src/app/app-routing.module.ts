@@ -9,38 +9,13 @@ export const Approutes: Routes = [
     path: "",
     component: FullComponent,
     children: [
-      { path: "", redirectTo: "/dashboard/classic", pathMatch: "full" },
+      { path: "", redirectTo: "/cargas", pathMatch: "full" },
       {
-        path: "dashboard",
+        path: "cargas",
         loadChildren: () =>
-          import("./dashboards/dashboard.module").then((m) => m.DashboardModule),
-          canActivate: [ TokenValidateGuard ],
-          canLoad: [ TokenValidateGuard ]
-      },
-      {
-        path: "starter",
-        loadChildren: () =>
-          import("./starter/starter.module").then((m) => m.StarterModule),
-      },
-      {
-        path: "charts",
-        loadChildren: () =>
-          import("./charts/charts.module").then((m) => m.ChartModule),
-      },
-      {
-        path: "apps",
-        loadChildren: () =>
-          import("./apps/apps.module").then((m) => m.AppsModule),
-      },      
-      {
-        path: "forms",
-        loadChildren: () =>
-          import("./form/forms.module").then((m) => m.FormModule),
-      },
-      {
-        path: "servidores",
-        loadChildren: () =>
-          import("./servidores/servidores.module").then((m) => m.ServidoresModule),
+          import("./cargas/cargas.module").then((m) => m.CargasModule),
+        //  canActivate: [ TokenValidateGuard ],
+        //  canLoad: [ TokenValidateGuard ]
       },
       {
         path: "catalogos",
@@ -51,12 +26,7 @@ export const Approutes: Routes = [
         path: "usuarios",
         loadChildren: () =>
           import("./usuarios/usuarios.module").then((m) => m.UsuariosModule),
-      },
-      {
-        path: "apps",
-        loadChildren: () =>
-          import("./apps/apps.module").then((m) => m.AppsModule),
-      },      
+      },  
       {
         path: "cierres",
         loadChildren: () =>
