@@ -46,6 +46,9 @@ export const Approutes: Routes = [
         path: "usuario",
         loadChildren: () =>
           import("./usuario/usuario.module").then((m) => m.UsuarioModule),
+        path: "ss",
+        loadChildren: () =>
+          import("./ss/ss.module").then((m) => m.SsModule),
       }
     ],
   },
