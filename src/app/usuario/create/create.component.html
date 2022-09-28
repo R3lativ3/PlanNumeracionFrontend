@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Ingresa los datos</h4>
+            </div>
+            <hr>
+            <form class="form-horizontal">
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="ename" class="col-sm-3 text-right control-label col-form-label">Crear Usuario</label>
+                        <div class="col-sm-6">
+                            <input [(ngModel)]="model.nombres" name="nombres" class="form-control" id="nombres" placeholder="Coloque sus nombres" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <input [(ngModel)]="model.apellidoPaterno" name="apellidoPaterno" class="form-control" id="apellidoPaterno" placeholder="Coloque su primer apellido" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <input [(ngModel)]="model.apellidoMaterno" name="apellidoMaterno" class="form-control" id="apellidoMaterno" placeholder="coloque su segundo apellido" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <input [(ngModel)]="model.attuid" name="attuid" class="form-control" id="attuid" placeholder="ATTUID" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <input [(ngModel)]="model.psw" #password="ngModel" type="password" name="psw" class="form-control" id="psw" placeholder="Contraseña" required>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="card-body">
+                    <div class="form-group m-b-0 text-right">
+                        <button class="btn btn-info waves-effect waves-light" (click)="create()">Save</button>
+                        <button class="btn btn-dark waves-effect waves-light">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

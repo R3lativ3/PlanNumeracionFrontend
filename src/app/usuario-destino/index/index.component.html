@@ -1,0 +1,64 @@
+<!-- <p>index works! prueba validacion carga</p>
+<div *ngIf = "cargando == false">
+    <p *ngFor="let item of listado">
+        {{item.usuario}} 
+    </p> 
+</div> -->
+
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body" style="padding-bottom: 0%;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="card-title text-uppercase">Usuario Destino</h5>
+                    </div>
+                    <!-- <div class="col-md-6">
+                        <a class="btn btn-info float-right"  [routerLink]="['./create']">Agregar</a>
+                    </div> -->
+                </div>
+            </div>
+            <div *ngIf="cargando == false">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                        <th scope="col" class="border-0 text-uppercase font-medium"></th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">ID</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Usuario</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Password</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">ID PNN Destino</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of listado">
+                            <td>
+                                <h5 class="font-medium mb-0"></h5>
+                            </td>
+                            <td style="line-height: 50px; vertical-align: middle;">
+                                <h5 class="font-medium mb-0">{{ item.id }}</h5>
+                            </td>
+                            <td style="line-height: 50px; vertical-align: middle;">
+                                <h5 class="font-medium mb-0">{{ item.usuario }}</h5>
+                            </td>
+                            <td style="vertical-align: middle;">
+                                <h5 class="font-medium mb-0">{{ item.psw }}</h5>
+                            </td>
+                            <td style="line-height: 50px; vertical-align: middle;">
+                                <h5 class="font-medium mb-0">{{ item.idPNNDestino }}</h5>
+
+                            <!-- <td style="vertical-align: middle;">
+                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  res.id]">
+                                    <i class="fa fa-edit"></i> 
+                                </a>
+                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  res.id]">
+                                    <i class="fa fa-trash"></i> 
+                                </a>                                
+                            </td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
