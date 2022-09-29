@@ -1,0 +1,10 @@
+<p>index works! prueba carga destino</p>
+<div *ngIf="!cargando">
+    <p *ngFor="let item of listado">
+        {{item.id}}
+        {{item.fechaCarga}}
+        {{item.nombreArchivo}}
+        {{item.idPnnDestino}}
+        {{item.idPnnUsuario}}
+    </p>
+</div>

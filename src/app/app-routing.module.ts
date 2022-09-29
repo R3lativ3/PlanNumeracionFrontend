@@ -31,6 +31,16 @@ export const Approutes: Routes = [
         path: "cierres",
         loadChildren: () =>
           import("./cierres/cierres.module").then((m) => m.CierresModule),
+      },
+      {
+      path: "credencialesValidacionCarga",
+      loadChildren: () =>
+      import("./credenciales-validacion-carga/credenciales-validacion-carga.module").then((m)=>m.CredencialesValidacionCargaModule),
+      },
+      {
+        path: "cargaDestino",
+        loadChildren: () =>
+        import("./carga-destino/carga-destino.module").then((m)=>m.CargaDestinoModule),
       }
     ],
   },
