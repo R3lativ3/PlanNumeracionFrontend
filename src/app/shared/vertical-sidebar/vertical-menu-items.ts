@@ -42,5 +42,22 @@ export const ROUTES: RouteInfo[] = [
       },
     ],
   },
+
+  {
+    path: "",
+    title: "Catalogos",
+    icon: "mdi mdi-dots-horizontal",
+    class: "nav-small-cap",
+    extralink: true,
+    submenu: [],
+  },
+  {
+    path: "usuario",
+    title: "Usuarios",
+    icon: "fas fa-users",
+    class: "",
+    extralink: false,
+    submenu: [],
+  },
   
 ];
