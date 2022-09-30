@@ -13,6 +13,6 @@ export class CredencialesValidacionCargaService {
   constructor(private api:HttpClient) { }
 
   getAll(){
-  return this.api.get<credencialesValidacionCarga[]>(this.link+"/api/credencialesValidacionCarga")
+    return this.api.get<credencialesValidacionCarga[]>(this.link+"/api/credencialesValidacionCarga")
   }
 }

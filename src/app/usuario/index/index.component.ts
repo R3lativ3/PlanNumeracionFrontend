@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { usuario } from '../models';
 import { UsuarioService } from '../usuario.service';
 
@@ -9,14 +10,33 @@ import { UsuarioService } from '../usuario.service';
 })
 export class IndexComponent implements OnInit {
   listado: usuario[] = []
-  cargando = true
+  loading = true
   constructor(private usuarioService: UsuarioService) { }
 
   async ngOnInit(){
-    this.cargando = true
     this.listado = await this.usuarioService.getAll().toPromise()
-    this.listado
-    this.cargando = false
+    this.loading = false
+  }
+
+  showAlertDelete(id: number){
+    Swal.fire({
+      title: '¿Estas seguro que deseas eliminar este registro?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Continuar',
+      cancelButtonText: 'Cancelar'
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const resp = await this.usuarioService.delete(id).toPromise()
+        if( resp.Status === 0){
+          Swal.fire("Eliminacion correcta",'','success')
+          this.usuarioService.getAll().subscribe(x => this.listado = x)
+          return
+        }
+        Swal.fire('Error', resp.Message, 'error')
+        return
+      }
+    })
   }
 
 }

@@ -1,1 +1,62 @@
-<p>index works!</p>
+
+
+<div *ngIf="loading">
+    loading please wait...
+</div>
+
+<div *ngIf="!loading" class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <h5 class="card-title text-uppercase mb-0" style="text-align: left; display:inline-block; width: 50%;">Destinos</h5>
+                </div>
+                <hr>
+                <a class="btn btn-info float-right" [routerLink]="['./realizar-carga']"><i class="fas fa-plus"></i> Agregar Destino</a>
+            </div>
+            
+            <br>
+            <div class="table-responsive">
+            <table class="table no-wrap user-table mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Destino</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">IP</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Path </th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Puerto </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of destinos" style="padding-bottom: 0%">
+                        <td >
+                            <h5 class="font-medium catorce mb-0">{{ item.nombre }}</h5>
+                        </td>
+                        <td>
+                            <h5 class="font-medium catorce mb-0">{{ item.ip }}</h5>
+                        </td>
+                        <td>
+                            <h5 class="font-medium catorce mb-0">{{ item.ruta }}</h5>
+                        </td>
+                        <td>
+                            <h5 class="font-medium catorce mb-0">{{ item.puerto }}</h5>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-circle btn-outline-info" (click)="getCredentials(item.id)" >
+                                <i class="fa fa-key"></i> 
+                            </a>
+                            <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  item.id]" >
+                                <i class="fa fa-edit"></i> 
+                            </a>
+                            <a type="button" class="btn btn-circle btn-outline-info" (click)="showAlertDelete(item.id)">
+                                <i class="fa fa-trash"></i> 
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+</div>
+
