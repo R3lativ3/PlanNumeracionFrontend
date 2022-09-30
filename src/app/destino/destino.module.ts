@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SsRoutingModule } from './ss-routing.module';
+import { DestinoRoutingModule } from './destino-routing.module';
 import { IndexComponent } from './index/index.component';
 import { CreateComponent } from './create/create.component';
+import { UpdateComponent } from './update/update.component';
 
 
 @NgModule({
-  declarations: [IndexComponent, CreateComponent],
+  declarations: [IndexComponent, CreateComponent, UpdateComponent],
   imports: [
     CommonModule,
-    SsRoutingModule
+    DestinoRoutingModule
   ]
 })
-export class SsModule { }
+export class DestinoModule { }

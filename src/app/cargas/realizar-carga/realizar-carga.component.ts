@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DestinoService } from 'src/app/destino/destino.service';
+import { destino } from 'src/app/destino/models';
 import { SharedService } from 'src/app/shared.service';
 import { CargasService } from '../cargas.service';
 import { uploadFile } from '../models';
@@ -9,19 +11,24 @@ import { uploadFile } from '../models';
   styleUrls: ['./realizar-carga.component.css']
 })
 export class RealizarCargaComponent implements OnInit {
-  model: uploadFile
-
+  model: uploadFile = {
+    destinos : []
+  }
+  destinos: destino[] = []
   selected: number[] = [5]
 
-  destinos=[
-    {
-      id: 5,
-      destino: "destino b"
-    },
-  ]
-  constructor(private cargasService: CargasService, private sharedService: SharedService) { }
+  constructor(private cargasService: CargasService, private sharedService: SharedService, private destinoService: DestinoService) { }
 
   ngOnInit(): void {
+    this.getDestinos()
+  }
+
+  getDestinos(){
+    this.destinoService.getAll().subscribe(x => {
+      this.destinos = x
+      this.destinos.forEach(x => x.nombre = `${x.nombre} - Puerto: ${x.ip}, Path: ${x.ruta}`)
+      console.log(this.destinos)
+    })    
   }
 
   onFileSelected(event: any) {
@@ -30,13 +37,15 @@ export class RealizarCargaComponent implements OnInit {
       this.model.archivo = file;
     }
   }
+
   setModel(model: any[]){
     return this.sharedService.setModel(model)
   }
 
   send(){
+    console.log(this.model)
     this.cargasService.sendFile(this.model).subscribe(x => {
-
+      console.log(x)
     })
   }
 }

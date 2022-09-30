@@ -1,4 +1,4 @@
 export interface uploadFile{
-    archivo: File
+    archivo?: File
     destinos: number[]
 }

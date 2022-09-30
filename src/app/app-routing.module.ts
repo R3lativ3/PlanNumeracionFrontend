@@ -13,44 +13,56 @@ export const Approutes: Routes = [
       {
         path: "cargas",
         loadChildren: () =>import("./cargas/cargas.module").then((m) => m.CargasModule),
-        //  canActivate: [ TokenValidateGuard ],
-        //  canLoad: [ TokenValidateGuard ]
+        canActivate: [ TokenValidateGuard ],
+        canLoad: [ TokenValidateGuard ]
       },
       {
         path: "catalogos",
         loadChildren: () =>import("./catalogos/catalogos.module").then((m) => m.CatalogosModule),
+        canActivate: [ TokenValidateGuard ],
+        canLoad: [ TokenValidateGuard ]
       },
       {
         path: "usuarios",
         loadChildren: () =>import("./usuarios/usuarios.module").then((m) => m.UsuariosModule),
+        canActivate: [ TokenValidateGuard ],
+        canLoad: [ TokenValidateGuard ]
       },  
       {
         path: "cierres",
         loadChildren: () =>import("./cierres/cierres.module").then((m) => m.CierresModule),
+        canActivate: [ TokenValidateGuard ],
+        canLoad: [ TokenValidateGuard ]
       },
       {
-      path: "credencialesValidacionCarga",
-      loadChildren: () =>import("./credenciales-validacion-carga/credenciales-validacion-carga.module").then((m)=>m.CredencialesValidacionCargaModule),
+        path: "credencialesValidacionCarga",
+        loadChildren: () =>import("./credenciales-validacion-carga/credenciales-validacion-carga.module").then((m)=>m.CredencialesValidacionCargaModule),
+        canActivate: [ TokenValidateGuard ],
+        canLoad: [ TokenValidateGuard ]
       },
       {
         path: "cargaDestino",
-        loadChildren: () =>import("./carga-destino/carga-destino.module").then((m)=>m.CargaDestinoModule)
-        },
-        {
-          path: "validacion-carga",
-          loadChildren: () =>import("./validacion-carga/validacion-carga.module").then((m) => m.ValidacionCargaModule)
-        },
+        loadChildren: () =>import("./carga-destino/carga-destino.module").then((m)=>m.CargaDestinoModule),
+        canActivate: [ TokenValidateGuard ],
+        canLoad: [ TokenValidateGuard ]
+      },
+      {
+        path: "validacion-carga",
+        loadChildren: () =>import("./validacion-carga/validacion-carga.module").then((m) => m.ValidacionCargaModule),
+        canActivate: [ TokenValidateGuard ],
+        canLoad: [ TokenValidateGuard ]
+      },
       {
         path: "usuario-destino",
         loadChildren: () =>import("./usuario-destino/usuario-destino.module").then((m) => m.UsuarioDestinoModule),
+        canActivate: [ TokenValidateGuard ],
+        canLoad: [ TokenValidateGuard ]
       },
       {
         path: "usuario",
-        loadChildren: () =>import("./usuario/usuario.module").then((m) => m.UsuarioModule)
-      },
-      {
-        path: "ss",
-        loadChildren: () =>import("./ss/ss.module").then((m) => m.SsModule)
+        loadChildren: () =>import("./usuario/usuario.module").then((m) => m.UsuarioModule),
+        canActivate: [ TokenValidateGuard ],
+        canLoad: [ TokenValidateGuard ]
       }
     ],
   },
