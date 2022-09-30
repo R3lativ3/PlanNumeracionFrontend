@@ -1,6 +1,7 @@
 import { RouteInfo } from "./vertical-sidebar.metadata";
 
 export const ROUTES: RouteInfo[] = [
+
   {
     path: "",
     title: "App",
@@ -8,6 +9,14 @@ export const ROUTES: RouteInfo[] = [
     class: "nav-small-cap",
     extralink: true,
     submenu: [],
+  },
+  {
+    path: "cargas",
+    title: "Cargas",
+    icon: "fas fa-tasks",
+    class: "",
+    extralink: false,
+    submenu: []
   },
   {
     path: "cierres",
