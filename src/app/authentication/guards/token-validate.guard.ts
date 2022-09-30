@@ -18,8 +18,14 @@ export class TokenValidateGuard implements CanActivate, CanLoad {
     .pipe(
       tap( valid => {
         if (!valid){
+          sessionStorage.removeItem('token')
+          sessionStorage.removeItem('user')
+          sessionStorage.removeItem('userName')
+          sessionStorage.clear();
           this.router.navigateByUrl('authentication/login')
+          return false
         }
+        return true
       })
     )
   }
@@ -29,8 +35,14 @@ export class TokenValidateGuard implements CanActivate, CanLoad {
     .pipe(
       tap( valid => {
         if (!valid){
+          sessionStorage.removeItem('token')
+          sessionStorage.removeItem('user')
+          sessionStorage.removeItem('userName')
+          sessionStorage.clear();
           this.router.navigateByUrl('authentication/login')
+          return false
         }
+        return true
       })
     )
   }

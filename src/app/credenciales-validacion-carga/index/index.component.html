@@ -1,0 +1,10 @@
+<p>index works! credenciales prueba</p>
+<div *ngIf = "!cargando">
+    <p *ngFor = "let item of listado">
+        {{item.id}}
+        {{item.hostname}}
+        {{item.puerto}}
+        {{item.tabla}}
+        {{item.idPnnDestino}}
+    </p>
+</div>

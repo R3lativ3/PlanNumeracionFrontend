@@ -7,11 +7,15 @@ import { usuarioDestino } from './models';
   providedIn: 'root'
 })
 export class UsuarioDestinoService {
-  private urlApis = environment.url
+  private url = environment.url
+
   constructor(private backEnd:HttpClient) { }
 
-  
   getAll(){
-    return this.backEnd.get<usuarioDestino[]>(this.urlApis + "/api/usuariosDestinos")
+    return this.backEnd.get<usuarioDestino[]>(this.url + "/api/usuariosDestinos")
+  }
+
+  getUsuarioByIdDestino(id: number){
+    return this.backEnd.get<usuarioDestino>(this.url + "/api/usuariosDestinos/destino/"+id)
   }
 }

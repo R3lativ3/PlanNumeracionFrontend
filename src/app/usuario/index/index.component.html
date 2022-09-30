@@ -1,12 +1,9 @@
-<!-- <p>index works! prueba validacion carga</p>
-<div *ngIf = "cargando == false">
-    <p *ngFor="let item of listado">
-        {{item.nombres}} 
-    </p> 
-</div> -->
+<div *ngIf="loading">
+  Cargando, por favor espera...
+</div>
 
 <br>
-<div class="row">
+<div class="row" *ngIf="loading == false">
     <div class="col-md-12">
         <div class="card">
             <div class="card-body" style="padding-bottom: 0%;">
@@ -19,26 +16,22 @@
                     
                 </div>
             </div>
-            <div *ngIf="cargando == false">
+            <div >
                 <table class="table table-sm">
                     <thead>
                         <tr>
                         <th scope="col" class="border-0 text-uppercase font-medium"></th>
-                        <th scope="col" class="border-0 text-uppercase font-medium">ID</th>
                         <th scope="col" class="border-0 text-uppercase font-medium">Nombres</th>
                         <th scope="col" class="border-0 text-uppercase font-medium">Apellido Paterno</th>
                         <th scope="col" class="border-0 text-uppercase font-medium">Apellido Materno</th>
                         <th scope="col" class="border-0 text-uppercase font-medium">ATTUID</th>
-                        <th scope="col" class="border-0 text-uppercase font-medium">Contraseña</th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let item of listado">
                             <td>
                                 <h5 class="font-medium mb-0"></h5>
-                            </td>
-                            <td style="line-height: 50px; vertical-align: middle;">
-                                <h5 class="font-medium mb-0">{{ item.id }}</h5>
                             </td>
                             <td style="line-height: 50px; vertical-align: middle;">
                                 <h5 class="font-medium mb-0">{{ item.nombres }}</h5>
@@ -52,19 +45,15 @@
                             <td style="line-height: 50px; vertical-align: middle;">
                                 <h5 class="font-medium mb-0">{{ item.attuid }}</h5>
                             </td>
+
                             <td style="vertical-align: middle;">
-                                <h5 class="font-medium mb-0">{{ item.psw }}</h5>
-                            </td>
-
-
-                            <!-- <td style="vertical-align: middle;">
-                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  res.id]">
+                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  item.id]">
                                     <i class="fa fa-edit"></i> 
                                 </a>
-                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  res.id]">
+                                <a type="button" class="btn btn-circle btn-outline-info" (click)="showAlertDelete(item.id)">
                                     <i class="fa fa-trash"></i> 
-                                </a>                                
-                            </td> -->
+                                </a>
+                            </td> 
                         </tr>
                     </tbody>
                 </table>

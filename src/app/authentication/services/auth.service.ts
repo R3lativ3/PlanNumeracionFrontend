@@ -24,27 +24,17 @@ export class AuthService {
     const url = `${this.url}/api/authentication/login`
     const body = {username, password}
     return this.http.post<Auth>(url, body)
-    .pipe(
-      tap( resp => {
-        if( resp.ok ){
-          sessionStorage.setItem('token', resp.user.token!)
-        }
-      }),
-      map( resp => {resp.ok, resp.message} ),
-      catchError( err => of(err.message) )
-    )
   }
 
   validarToken(): Observable<boolean>{
     const url = `${this.url}/api/authentication/validateToken`;
-    const headers = new HttpHeaders()
-      .set('Authorization', `Bearer ${sessionStorage.getItem('token') || 'lel'}`)
+    const token = sessionStorage.getItem('token')
+    if(token === null) return of(false)
 
-    console.log(headers)
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`)
     return this.http.get<Auth>(url, { headers })
       .pipe(
         map( resp => {
-          console.log(resp)
           sessionStorage.setItem('token', resp.user.token!)
             this._user = {
               userName : resp.user.userName!,

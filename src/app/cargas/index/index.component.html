@@ -1,1 +1,60 @@
-<p>index works!</p>
+
+
+<div *ngIf="loading">
+    loading please wait...
+</div>
+
+<div *ngIf="!loading" class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <h5 class="card-title text-uppercase mb-0" style="text-align: left; display:inline-block; width: 50%;">Carga de Archivos</h5>
+                    <b class="text-uppercase" style="text-align: right; display:inline-block; width: 50%">{{cargas.length}} Cargas Realizadas</b>                 
+                </div>
+                <hr>
+
+                <button class="btn btn-secondary float-right" ><i class="fas fa-search"></i> Validar Carga</button>
+                <a class="btn btn-info float-right" [routerLink]="['./realizar-carga']"><i class="fas fa-plus"></i> Realizar Carga</a>
+            </div>
+            
+            <br>
+            <div class="table-responsive">
+            <table class="table no-wrap user-table mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Fecha </th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Archivo </th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Destino / <span class="text-muted2">Ip Destino </span></th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Path </th>
+                        <th scope="col" class="border-0 text-uppercase font-medium">Usuario Carga / <span class="text-muted2">ATTUID </span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let servidor of cargas" style="padding-bottom: 0%">
+                        <td >
+                            <h5 class="font-medium catorce mb-0">{{ servidor.fechaCarga }}</h5>
+                        </td>
+                        <td>
+                            <h5 class="font-medium catorce mb-0">{{ servidor.nombreArchivo }}</h5>
+                        </td>
+                        <td>
+                            <h5 class="font-medium catorce mb-0">{{ servidor.nombreDestino }}</h5>
+                            <span class="text-muted">{{ servidor.ipDestino }}</span>
+                        </td>
+                        <td>
+                            <h5 class="font-medium catorce mb-0">{{ servidor.pathDestino }}</h5>
+                        </td>
+                        <td>
+                            <h5 class="font-medium catorce mb-0">{{ servidor.nombreUsuario }} {{ servidor.apellidoUsuario }}</h5>
+                            <span class="text-muted">{{ servidor.attuid }}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+</div>
+

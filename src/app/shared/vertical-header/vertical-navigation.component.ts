@@ -17,72 +17,19 @@ declare var $: any;
 })
 export class VerticalNavigationComponent implements AfterViewInit {
 
-  public config: PerfectScrollbarConfigInterface = {};
 
   public showSearch = false;
 
-  public selectedLanguage: any = {
-    language: 'English',
-    code: 'en',
-    type: 'US',
-    icon: 'us'
-  }
-
-  public languages: any[] = [{
-    language: 'English',
-    code: 'en',
-    type: 'US',
-    icon: 'us'
-  },
-  {
-    language: 'Español',
-    code: 'es',
-    icon: 'es'
-  },
-  {
-    language: 'Français',
-    code: 'fr',
-    icon: 'fr'
-  },
-  {
-    language: 'German',
-    code: 'de',
-    icon: 'de'
-  }]
-
-
-  // This is for Notifications
-  notifications: Object[] = [
-    {
-      btn: 'btn-danger',
-      icon: 'ti-link',
-      title: 'Notificacion',
-      subject: 'Notificacion',
-      time: '9:30 AM'
-    }
-  ];
-
-  // This is for Mymessages
-  mymessages: Object[] = [
-    {
-      useravatar: 'assets/images/users/1.jpg',
-      status: 'online',
-      from: '.',
-      subject: 'Notificacion',
-      time: '9:30 AM'
-    }
-  ];
-
-  constructor(private modalService: NgbModal, private translate: TranslateService, private authService: AuthService, private router: Router) {
-    translate.setDefaultLang('en');
+  constructor(private authService: AuthService, private router: Router) {
   }
 
   get usuario(){
-    return this.authService.usuario.userName;
+    return sessionStorage.getItem('user')?.toLowerCase();
+    //return this.authService.usuario.userName;
   }
 
-  get name(){
-    return this.authService.usuario.name;
+  get nombre(){
+    return sessionStorage.getItem('userName')?.toUpperCase();
   }
 
   logout(){
@@ -92,8 +39,5 @@ export class VerticalNavigationComponent implements AfterViewInit {
 
   ngAfterViewInit() { }
 
-  changeLanguage(lang: any) {
-    this.translate.use(lang.code)
-    this.selectedLanguage = lang;
-  }
+
 }
