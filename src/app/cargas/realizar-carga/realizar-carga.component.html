@@ -8,13 +8,13 @@
             <div class="form-horizontal">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="ename" class="col-sm-3 text-right control-label col-form-label">Rol</label>
+                        <label for="ename" class="col-sm-3 text-right control-label col-form-label">Destinos</label>
                         <div class="col-sm-6">
                             <app-select-box [modelInput] = setModel(destinos) [selectedItemsInput]=selected (event)="model.destinos = $event"></app-select-box>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="control-label text-right col-md-3">Activo</label>
+                        <label class="control-label text-right col-md-3">Archivo</label>
                         <div class="col-md-9">
                             <div class="form-check">
                                 <input (change)="onFileSelected($event)" name="status"  class="form-check-input" type="file" id="defaultCheck1">
@@ -28,8 +28,8 @@
                 <hr>
                 <div class="card-body">
                     <div class="form-group m-b-0 text-right">
-                        <button class="btn btn-info waves-effect waves-light" (click)="send()">Save</button>
-                        <button class="btn btn-dark waves-effect waves-light">Cancel</button>
+                        <button class="btn btn-info waves-effect waves-light" (click)="send()">Enviar</button>
+                        <a [routerLink]="['../']" class="btn btn-dark waves-effect waves-light">Cancelar</a>
                     </div>
                 </div>
             </div>

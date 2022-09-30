@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CargasService } from '../cargas.service';
+import { cargaDestino } from '../models';
 
 @Component({
   selector: 'app-index',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  loading = true
+  cargas: cargaDestino[] = []
+  constructor(private backend: CargasService) { }
 
   ngOnInit(): void {
+    this.getAll()
   }
 
+  getAll(){
+    this.backend.getAll().subscribe(x => {
+      this.cargas = x
+      this.loading = false
+    })
+  }
 }

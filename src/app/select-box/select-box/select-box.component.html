@@ -3,8 +3,11 @@
     [placeholder]="'Seleccionar'"
     [settings]="dropdownSettings"
     [data]="models"
+    [(ngModel)]="selectedItems" 
     (onSelect)="onItemSelect($event)"
     (onDeSelect)="onItemDeSelect($event)"
+    (onSelectAll)="onItemSelectAll($event)"
+    (onDeSelectAll)="onItemDeSelectAll($event)"
     >
     </ng-multiselect-dropdown>    
 </div>

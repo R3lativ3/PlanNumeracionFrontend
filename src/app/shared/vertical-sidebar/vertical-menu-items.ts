@@ -1,7 +1,22 @@
 import { RouteInfo } from "./vertical-sidebar.metadata";
 
 export const ROUTES: RouteInfo[] = [
-
+  {
+    path: "",
+    title: "Gestion de Usuarios",
+    icon: "mdi mdi-dots-horizontal",
+    class: "nav-small-cap",
+    extralink: true,
+    submenu: [],
+  },
+  {
+    path: "usuario",
+    title: "Usuarios",
+    icon: "fas fa-users",
+    class: "",
+    extralink: false,
+    submenu: [],
+  },
   {
     path: "",
     title: "App",
@@ -19,40 +34,6 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: "cierres",
-    title: "Cierres",
-    icon: "fas fa-server",
-    class: "has-arrow",
-    extralink: false,
-    submenu: [
-      {
-        path: "cierres/parcial/create",
-        title: "Crear Cierre",
-        icon: "fas fa-plus",
-        class: "",
-        extralink: false,
-        submenu: [],
-      },
-      {
-        path: "cierres/parcial",
-        title: "Resumen Parcial",
-        icon: "fas fa-file",
-        class: "",
-        extralink: false,
-        submenu: [],
-      },
-      {
-        path: "cierres/complemento",
-        title: "Resumen Complemento",
-        icon: "fas fa-file",
-        class: "",
-        extralink: false,
-        submenu: [],
-      },
-    ],
-  },
-
-  {
     path: "",
     title: "Catalogos",
     icon: "mdi mdi-dots-horizontal",
@@ -61,9 +42,9 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
-    path: "usuario",
-    title: "Usuarios",
-    icon: "fas fa-users",
+    path: "destinos",
+    title: "Destinos",
+    icon: "fas fa-server",
     class: "",
     extralink: false,
     submenu: [],

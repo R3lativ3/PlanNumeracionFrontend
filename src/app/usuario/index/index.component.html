@@ -24,7 +24,6 @@
                     <thead>
                         <tr>
                         <th scope="col" class="border-0 text-uppercase font-medium"></th>
-                        <th scope="col" class="border-0 text-uppercase font-medium">ID</th>
                         <th scope="col" class="border-0 text-uppercase font-medium">Nombres</th>
                         <th scope="col" class="border-0 text-uppercase font-medium">Apellido Paterno</th>
                         <th scope="col" class="border-0 text-uppercase font-medium">Apellido Materno</th>
@@ -38,9 +37,6 @@
                                 <h5 class="font-medium mb-0"></h5>
                             </td>
                             <td style="line-height: 50px; vertical-align: middle;">
-                                <h5 class="font-medium mb-0">{{ item.id }}</h5>
-                            </td>
-                            <td style="line-height: 50px; vertical-align: middle;">
                                 <h5 class="font-medium mb-0">{{ item.nombres }}</h5>
                             </td>
                             <td style="line-height: 50px; vertical-align: middle;">
@@ -52,19 +48,15 @@
                             <td style="line-height: 50px; vertical-align: middle;">
                                 <h5 class="font-medium mb-0">{{ item.attuid }}</h5>
                             </td>
+
                             <td style="vertical-align: middle;">
-                                <h5 class="font-medium mb-0">{{ item.psw }}</h5>
-                            </td>
-
-
-                            <!-- <td style="vertical-align: middle;">
-                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  res.id]">
+                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  item.id]">
                                     <i class="fa fa-edit"></i> 
                                 </a>
-                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  res.id]">
+                                <a type="button" class="btn btn-circle btn-outline-info" [routerLink]="['./edit',  item.id]">
                                     <i class="fa fa-trash"></i> 
                                 </a>                                
-                            </td> -->
+                            </td> 
                         </tr>
                     </tbody>
                 </table>

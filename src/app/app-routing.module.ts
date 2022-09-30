@@ -29,12 +29,6 @@ export const Approutes: Routes = [
         canLoad: [ TokenValidateGuard ]
       },  
       {
-        path: "cierres",
-        loadChildren: () =>import("./cierres/cierres.module").then((m) => m.CierresModule),
-        canActivate: [ TokenValidateGuard ],
-        canLoad: [ TokenValidateGuard ]
-      },
-      {
         path: "credencialesValidacionCarga",
         loadChildren: () =>import("./credenciales-validacion-carga/credenciales-validacion-carga.module").then((m)=>m.CredencialesValidacionCargaModule),
         canActivate: [ TokenValidateGuard ],
@@ -61,6 +55,12 @@ export const Approutes: Routes = [
       {
         path: "usuario",
         loadChildren: () =>import("./usuario/usuario.module").then((m) => m.UsuarioModule),
+        canActivate: [ TokenValidateGuard ],
+        canLoad: [ TokenValidateGuard ]
+      },
+      {
+        path: "destinos",
+        loadChildren: () =>import("./destino/destino.module").then((m) => m.DestinoModule),
         canActivate: [ TokenValidateGuard ],
         canLoad: [ TokenValidateGuard ]
       }
