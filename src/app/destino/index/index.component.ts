@@ -39,12 +39,12 @@ export class IndexComponent implements OnInit {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const resp = await this.backend.delete(id).toPromise()
-        if( resp.Status === 0){
+        if( resp.status === 0){
           Swal.fire("Eliminacion correcta",'','success')
           this.getAll()
           return
         }
-        Swal.fire('Error', resp.Message, 'error')
+        Swal.fire('Error', resp.message, 'error')
         return
       }
     })
